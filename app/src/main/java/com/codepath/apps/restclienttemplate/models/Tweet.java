@@ -16,11 +16,16 @@ public class Tweet {
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
-        tweet.createdAt = jsonObject.getString("created_at");
+        tweet.createdAt = FormatTime(jsonObject.getString("created_at"));
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.id = jsonObject.getLong("id");
 
         return tweet;
+    }
+
+    private static String FormatTime(String created_at) {
+        String[] tokens = created_at.split(" ");
+        return tokens[3];
     }
 
     public static List<Tweet> fromJsonArray(JSONArray jsonArray) throws JSONException{
