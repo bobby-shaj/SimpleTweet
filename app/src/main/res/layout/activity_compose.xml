@@ -28,4 +28,13 @@
         android:layout_marginTop="5dp"
         android:text="@string/tweet" />
 
+    <TextView
+        android:id="@+id/tvChrCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCompose"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="0/140" />
+
 </RelativeLayout>
